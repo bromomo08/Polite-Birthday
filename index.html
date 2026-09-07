@@ -1,1 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 16th Birthday, Polite! 💗</title>
+<style>
+:root{
+  --pink:#e75480;
+  --deep:#a92d5c;
+  --light:#fff0f6;
+  --text:#4b2636;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; color:var(--text);
+  font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 10% 20%,rgba(255,255,255,.8),transparent 20%),
+    radial-gradient(circle at 90% 80%,rgba(255,190,215,.7),transparent 25%),
+    linear-gradient(135deg,#ffd6e7,#fff4f8,#f7c2d8);
+  overflow-x:hidden;
+}
+body::before{
+  content:"♥  ✦  ♥  ✦  ♥  ✦  ♥  ✦  ♥";
+  position:fixed; inset:0 auto auto 0; width:100%;
+  color:rgba(231,84,128,.12); font-size:32px; word-spacing:45px;
+  pointer-events:none; z-index:-1;
+}
+.hero{
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  padding:30px 18px;
+}
+.main-card{
+  width:min(680px,94vw); text-align:center; padding:45px 25px;
+  border-radius:32px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:0 20px 55px rgba(119,30,67,.18);
+  backdrop-filter:blur(12px);
+}
+.sparkles{letter-spacing:10px;color:var(--pink);font-size:1.2rem}
+.kicker{
+  color:var(--deep);letter-spacing:4px;text-transform:uppercase;
+  font-size:.72rem;margin-top:15px
+}
+h1{
+  margin:12px 0 5px;font-size:clamp(3.4rem,12vw,6.8rem);
+  line-height:.9;color:var(--pink);text-shadow:0 5px 20px rgba(231,84,128,.12)
+}
+.subtitle{font-size:1.25rem;margin:18px auto;color:#71354d}
+.from{font-style:italic;margin:6px 0 30px;color:#9a4968}
+.menu{display:grid;gap:13px;max-width:470px;margin:auto}
+.menu-btn{
+  width:100%;border:0;border-radius:18px;padding:18px 20px;
+  cursor:pointer;font-family:inherit;font-size:1.08rem;font-weight:bold;
+  color:#8f2d54;background:linear-gradient(135deg,#fff,#ffe1ec);
+  box-shadow:0 8px 18px rgba(135,35,72,.10);transition:.25s;
+}
+.menu-btn:hover{transform:translateY(-3px) scale(1.01);background:#fff}
+.menu-btn:last-child{background:linear-gradient(135deg,#e75480,#f68bb0);color:white}
+.note{font-size:.8rem;color:#9b6175;margin-top:25px}
 
+/* MODALS */
+.overlay{
+  position:fixed;inset:0;background:rgba(62,19,39,.46);
+  display:none;align-items:center;justify-content:center;
+  padding:18px;z-index:10;
+  backdrop-filter:blur(6px);
+}
+.overlay.show{display:flex;animation:fade .25s ease}
+.modal{
+  width:min(820px,96vw);max-height:88vh;overflow:auto;
+  background:linear-gradient(160deg,#fff,#fff5f9);
+  border-radius:28px;padding:34px 25px;
+  box-shadow:0 25px 80px rgba(40,5,22,.35);
+  position:relative;animation:pop .35s ease;
+}
+.close-x{
+  position:absolute;right:17px;top:14px;border:0;background:#ffe1ec;
+  color:#b83d69;width:38px;height:38px;border-radius:50%;
+  font-size:1.3rem;cursor:pointer
+}
+.modal-kicker{letter-spacing:3px;text-transform:uppercase;font-size:.7rem;color:#c44d78}
+h2{color:#c73e70;font-size:clamp(2rem,6vw,3rem);margin:10px 0 18px}
+.modal p{font-size:1.05rem;line-height:1.8}
+.signature{font-style:italic;margin-top:25px;font-size:1.12rem;color:#9c3159}
+.close-btn{
+  display:block;margin:28px auto 0;border:0;border-radius:999px;
+  padding:13px 26px;background:#e75480;color:#fff;
+  font-family:inherit;font-size:1rem;cursor:pointer
+}
+.wishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.wish{background:#fff;padding:18px;border-radius:18px;border:1px solid #ffe0ea}
+.wish b{display:block;color:#c43d6d;margin-bottom:6px;font-size:1.05rem}
+.big-appreciation{background:#fff8fb;padding:20px;border-radius:20px;border-left:5px solid #e75480}
+.secret{
+  background:linear-gradient(135deg,#e75480,#a92d5c);color:#fff
+}
+.secret h2,.secret .modal-kicker,.secret .signature{color:#fff}
+.secret .close-x{background:rgba(255,255,255,.2);color:#fff}
+.secret .close-btn{background:#fff;color:#b13360}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.piece{position:absolute;top:-20px;width:9px;height:14px;animation:fall 3.8s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(800deg)}}
+@keyframes pop{from{transform:scale(.88);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(max-width:500px){.main-card{padding:38px 18px}.modal{padding:30px 18px}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="main-card">
+    <div class="sparkles">✦ 💗 ✦</div>
+    <div class="kicker">08 September • Your special day</div>
+    <h1>POLITE</h1>
+    <p class="subtitle"><b>Happy 16th Birthday! 🎂💗</b></p>
+    <p class="from">From your brother, Momo.</p>
+
+    <div class="menu">
+      <button class="menu-btn" onclick="openModal('letter')">💌 Read My Letter</button>
+      <button class="menu-btn" onclick="openModal('wishes')">🎂 What I Wish For You</button>
+      <button class="menu-btn" onclick="openModal('appreciation')">🌸 Things I Appreciate About You</button>
+      <button class="menu-btn" onclick="openModal('secret'); confetti()">🎁 One More Thing...</button>
+    </div>
+
+    <p class="note">Each button holds something written especially for you. 💗</p>
+  </div>
+</section>
+
+<!-- LETTER -->
+<div class="overlay" id="letter" onclick="outsideClose(event,'letter')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('letter')">×</button>
+    <div class="modal-kicker">01 · A letter from Momo</div>
+    <h2>Dear Polite 💌</h2>
+
+    <p>Happy birthday, Sis.</p>
+
+    <p>It is honestly funny how people can enter your life in such a simple way and somehow become important without you even noticing exactly when it happened. We just decided that you were my sister and I was your brother — and somehow, here we are. You calling me <b>Momo</b>, me calling you <b>Sis</b>, and telling each other things that we might not tell everyone else.</p>
+
+    <p>Since last year, you have become someone I genuinely enjoy talking to. We vent. We complain. We share our problems, the strange events happening in our lives, and all the random things in between. There is something I really value about the fact that we do not feel like we have to hide everything from each other.</p>
+
+    <p>And if there is one thing I appreciate most about you, it is your <b>honesty</b>. Real honesty is rare. Being able to trust someone to tell you the truth — even when life is messy — means more than people realise.</p>
+
+    <p>Also, let's not forget your contribution to my personal investigation department. 😭 You actually followed a certain person's movements and told me what was happening. And unfortunately for my heart at the time, the information was very effective. 💀😂 But genuinely, your honesty helped me see things clearly and helped me move forward.</p>
+
+    <p>You are kind. You are loyal. And yes... you are a little short-tempered. 😭😂 But that is Polite. That is Sis. That is you.</p>
+
+    <p>On your sixteenth birthday, I hope you remember that you matter to the people who genuinely know you. I hope this new year of your life brings you growth, peace, laughter, beautiful memories, and people who appreciate your heart properly.</p>
+
+    <p>Thank you for being my sister. Thank you for listening when I needed someone. Thank you for trusting me with your own problems. Thank you for being honest with me.</p>
+
+    <p>And thank you for simply being <b>Polite</b>.</p>
+
+    <p class="signature">Happy 16th, Sis. 💗<br>— Your brother, Momo</p>
+    <button class="close-btn" onclick="closeModal('letter')">Close Letter 💌</button>
+  </div>
+</div>
+
+<!-- WISHES -->
+<div class="overlay" id="wishes" onclick="outsideClose(event,'wishes')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('wishes')">×</button>
+    <div class="modal-kicker">02 · Birthday wishes</div>
+    <h2>What I Wish For You 🎂</h2>
+
+    <div class="wishes">
+      <div class="wish"><b>💗 Happiness</b>I hope you find genuine reasons to smile, even on ordinary days.</div>
+      <div class="wish"><b>🌷 Peace</b>I hope your heart feels lighter and your mind finds moments of calm.</div>
+      <div class="wish"><b>✨ Growth</b>I hope being sixteen helps you discover more about who you are and who you want to become.</div>
+      <div class="wish"><b>🤍 Real People</b>I hope you are surrounded by people who are honest, loyal and genuine with you.</div>
+      <div class="wish"><b>🎉 Beautiful Memories</b>I hope this year gives you moments you will look back on and smile about.</div>
+      <div class="wish"><b>🌸 Confidence</b>I hope you continue becoming comfortable with exactly who you are.</div>
+      <div class="wish"><b>😂 A little wisdom</b>I also wish you wisdom concerning certain exes and mysterious money exchanges. 😭💀</div>
+      <div class="wish"><b>💫 A wonderful year</b>Most of all, I hope sixteen is one of your most beautiful years yet.</div>
+    </div>
+
+    <p class="signature">You deserve good things, Sis. Happy birthday. 💗</p>
+    <button class="close-btn" onclick="closeModal('wishes')">Close Wishes 🎂</button>
+  </div>
+</div>
+
+<!-- APPRECIATION -->
+<div class="overlay" id="appreciation" onclick="outsideClose(event,'appreciation')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('appreciation')">×</button>
+    <div class="modal-kicker">03 · Appreciation</div>
+    <h2>Things I Appreciate About You 🌸</h2>
+
+    <div class="big-appreciation">
+      <p><b>💗 Your honesty.</b><br>I value the fact that I can trust you to tell me the truth.</p>
+      <p><b>🤍 Your loyalty.</b><br>You have shown that when you care about someone, you genuinely show up.</p>
+      <p><b>🫂 The trust between us.</b><br>We tell each other things, vent, share problems and talk about what is happening in our lives.</p>
+      <p><b>😂 Your personality.</b><br>You are kind, loyal, funny... and occasionally short-tempered. Very occasionally. 😭</p>
+      <p><b>🌷 Your presence.</b><br>Our conversations genuinely matter to me. Sometimes simply having someone you can talk to is more valuable than people realise.</p>
+    </div>
+
+    <p>Polite, you are appreciated. Not just because today is your birthday, but because the good things about you are noticed.</p>
+
+    <p><b>Thank you for being my sworn sister, Sis. 💗</b></p>
+
+    <button class="close-btn" onclick="closeModal('appreciation')">Close This 💗</button>
+  </div>
+</div>
+
+<!-- SECRET -->
+<div class="overlay" id="secret" onclick="outsideClose(event,'secret')">
+  <div class="modal secret">
+    <button class="close-x" onclick="closeModal('secret')">×</button>
+    <div class="modal-kicker">04 · One more thing...</div>
+    <h2>For my sister 🎁</h2>
+
+    <p>Before you leave this little page, there is one thing I really want you to remember.</p>
+
+    <p>No matter where life takes us, I hope you always remember that you have a brother named <b>Momo</b>.</p>
+
+    <p>You can vent to me. You can tell me about your problems. You can tell me about the confusing things happening in your life. You can annoy me. And apparently, you can even be recruited into investigative missions again. 😭😂</p>
+
+    <p>But jokes aside, I genuinely hope that you have a wonderful day today. Laugh a lot. Eat something nice. Enjoy being sixteen. Take pictures. Make memories. Let yourself feel celebrated.</p>
+
+    <p>Life moves incredibly fast, and people do not always say what they appreciate about each other while they have the chance. So I wanted to say it today:</p>
+
+    <p style="font-size:1.35rem;text-align:center"><b>I appreciate you, Sis. 💗</b></p>
+
+    <p>Thank you for being part of my life. Thank you for the conversations, the honesty, the trust and everything we have shared since last year.</p>
+
+    <p>I hope this year is kind to you. I hope your heart finds peace. I hope you grow into even more of the person you want to become.</p>
+
+    <p><b>Have the most wonderful birthday, Polite. You deserve a beautiful day. 💗</b></p>
+
+    <p class="signature">Happy 16th, Sis.<br>With appreciation and sibling love,<br>— Your brother, Momo 💗</p>
+
+    <button class="close-btn" onclick="closeModal('secret')">Close Surprise 💗</button>
+  </div>
+</div>
+
+<script>
+function openModal(id){
+  document.getElementById(id).classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove('show');
+  document.body.style.overflow='auto';
+}
+function outsideClose(e,id){
+  if(e.target.id===id) closeModal(id);
+}
+function confetti(){
+ const colors=['#fff','#ffd1e1','#ff7eaa','#f7b2c8','#e75480','#ffc2d6'];
+ for(let i=0;i<140;i++){
+   const p=document.createElement('div');
+   p.className='piece';
+   p.style.left=Math.random()*100+'vw';
+   p.style.background=colors[Math.floor(Math.random()*colors.length)];
+   p.style.animationDelay=(Math.random()*.8)+'s';
+   p.style.borderRadius=Math.random()>.5?'50%':'2px';
+   document.body.appendChild(p);
+   setTimeout(()=>p.remove(),5000);
+ }
+}
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'){
+   document.querySelectorAll('.overlay.show').forEach(x=>x.classList.remove('show'));
+   document.body.style.overflow='auto';
+ }
+});
+</script>
+</body>
+</html>
